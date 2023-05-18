@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <cuda_runtime.h>
-_global_ void MatrixMulKernel(float* M, float* N, float* P, int Mrow,int Mcol,int Ncol) {
+__global__ void MatrixMulKernel(float* M, float* N, float* P, int Mrow,int Mcol,int Ncol) {
 
   int Row = blockIdx.y * blockDim.y + threadIdx.y;
 
